@@ -8,9 +8,17 @@ STEPUE is a wearable proof-of-concept built to investigate whether ankle movemen
 >
 > **POC scope:** The current implementation is a technical prototype using heuristic state classification for controlled testing. It does **not** establish clinical FOG prediction accuracy, diagnosis, or prevention.
 
-![STEPUE POC overview](images/stepue-poc-overview.png)
+## Current Physical POC
 
----
+The image below shows the current physical STEPUE proof-of-concept prototype, including the primary hardware assembly, top view, side view, FSR pressure sensor, power switch, and USB power connection.
+
+![STEPUE POC Prototype Overview](images/STEPUE-PoC-Prototype-Overview.png)
+
+> **POC Status:** This is the current hardware proof of concept. The final STEPUE product is still under development and may undergo changes in hardware, PCB, enclosure, sensing architecture, power system, firmware, algorithms, and mechanical design.
+
+
+
+![STEPUE POC overview](images/stepue-poc-overview.png)
 
 ## Current POC at a glance
 
