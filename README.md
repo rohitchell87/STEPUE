@@ -1,6 +1,6 @@
 # STEPUE
 
-### Ankle-Worn Gait Monitoring & FOG-Like Condition Detection — Proof of Concept
+### Ankle-Worn Gait Monitoring & FOG-Like Condition Detection - Proof of Concept
 
 STEPUE is a wearable proof-of-concept built to investigate whether ankle movement and foot-pressure signals can be sensed in real time and used to classify controlled movement into **STANDING**, **WALKING**, and a predefined **FOG-LIKE CONDITION**.
 
