@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<style>
+.box{fill:#f7f9fc;stroke:#26364a;stroke-width:2;rx:14}.title{font:700 24px Arial;fill:#142238}.txt{font:16px Arial;fill:#26364a}.small{font:14px Arial;fill:#526174}.wire{stroke:#34495e;stroke-width:3;fill:none}.i2c{stroke:#5b4aa8;stroke-width:4;fill:none}.power{stroke:#16845b;stroke-width:4;fill:none}.sense{stroke:#1f6fb2;stroke-width:4;fill:none}.label{font:700 15px Arial;fill:#26364a}
+</style>
+<rect width="1200" height="760" fill="white"/>
+<text x="600" y="45" text-anchor="middle" class="title">STEPUE Current POC — Circuit / Wiring Overview</text>
+<text x="600" y="72" text-anchor="middle" class="small">Current implementation: ESP32 + MPU6050 + ADS1115 + FSR. No actuator shown because it is not part of the current POC.</text>
+
+<rect x="60" y="140" width="260" height="180" class="box"/>
+<text x="190" y="175" text-anchor="middle" class="title">MPU6050</text>
+<text x="85" y="215" class="txt">VCC → 3.3 V</text>
+<text x="85" y="245" class="txt">GND → GND</text>
+<text x="85" y="275" class="txt">SDA → GPIO 21</text>
+<text x="85" y="305" class="txt">SCL → GPIO 22</text>
+<text x="190" y="350" text-anchor="middle" class="small">I²C address: 0x68</text>
+
+<rect x="470" y="120" width="280" height="240" class="box"/>
+<text x="610" y="160" text-anchor="middle" class="title">ESP32 DevKit</text>
+<text x="610" y="200" text-anchor="middle" class="txt">Main controller</text>
+<text x="610" y="230" text-anchor="middle" class="txt">Sensor processing</text>
+<text x="610" y="260" text-anchor="middle" class="txt">Heuristic state machine</text>
+<text x="610" y="290" text-anchor="middle" class="txt">Wi-Fi + WebServer</text>
+<text x="610" y="320" text-anchor="middle" class="small">SDA GPIO21 · SCL GPIO22</text>
+
+<rect x="900" y="140" width="240" height="180" class="box"/>
+<text x="1020" y="175" text-anchor="middle" class="title">ADS1115</text>
+<text x="925" y="215" class="txt">VDD → 3.3 V</text>
+<text x="925" y="245" class="txt">GND → GND</text>
+<text x="925" y="275" class="txt">SDA → GPIO 21</text>
+<text x="925" y="305" class="txt">SCL → GPIO 22</text>
+<text x="1020" y="350" text-anchor="middle" class="small">I²C address: 0x49</text>
+
+<rect x="880" y="470" width="280" height="150" class="box"/>
+<text x="1020" y="510" text-anchor="middle" class="title">FSR Pressure Sensor</text>
+<text x="1020" y="550" text-anchor="middle" class="txt">Signal → ADS1115 A0</text>
+<text x="1020" y="580" text-anchor="middle" class="small">Voltage-divider details must match the physical build.</text>
+
+<rect x="470" y="470" width="280" height="150" class="box"/>
+<text x="610" y="510" text-anchor="middle" class="title">Local Wi-Fi Dashboard</text>
+<text x="610" y="550" text-anchor="middle" class="txt">State + IMU + FSR telemetry</text>
+<text x="610" y="580" text-anchor="middle" class="small">Hosted directly by ESP32</text>
+
+<rect x="60" y="470" width="260" height="150" class="box"/>
+<text x="190" y="510" text-anchor="middle" class="title">Portable Power</text>
+<text x="190" y="550" text-anchor="middle" class="txt">Li-Po → TP4056</text>
+<text x="190" y="580" text-anchor="middle" class="txt">→ boost/regulation → ESP32</text>
+
+<path d="M320 230 H470" class="i2c"/>
+<text x="395" y="215" text-anchor="middle" class="label">SDA / SCL</text>
+<path d="M750 230 H900" class="i2c"/>
+<text x="825" y="215" text-anchor="middle" class="label">SDA / SCL</text>
+<path d="M1020 320 V470" class="sense"/>
+<text x="1040" y="400" class="label">A0</text>
+<path d="M750 290 C800 330 830 390 880 520" class="sense"/>
+<text x="810" y="400" class="label">Pressure data</text>
+<path d="M610 360 V470" class="wire"/>
+<text x="635" y="425" class="label">HTTP / telemetry</text>
+<path d="M320 545 H470" class="power"/>
+<text x="395" y="530" text-anchor="middle" class="label">Power</text>
+<path d="M190 320 C190 390 300 400 470 190" class="power" stroke-dasharray="8 8"/>
+<text x="285" y="395" class="small">3.3 V / GND distribution</text>
+
+<text x="600" y="700" text-anchor="middle" class="small">Verify voltage-divider resistor, power regulator output, and physical wiring against the actual hardware before energizing the circuit.</text>
+</svg>
